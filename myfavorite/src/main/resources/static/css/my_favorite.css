@@ -1,0 +1,320 @@
+body {
+  margin: 5%;                      /* 全要素位置 */
+  background-color: var(--main-color); /* 背景色     */
+  color: var(--sub-2-color);           /* 文字色     */
+
+}
+
+h1{
+
+  margin-top:-30px;    /* 文字位置 */
+  margin-bottom: -9px; /* 文字位置 */
+  margin-left: 19px;   /* 文字位置 */
+}
+/*─────────────────────────── <p>タグCSS ───────────────────────────*/
+/* 初期画面 */
+.first{
+  margin-left: 17px;                        /* 文字位置     */
+  letter-spacing: 0.8px;                    /* 文字間隔     */
+  font-family: 'IM Fell DW Pica SC', serif; /* フォント指定 */
+}
+
+/* 登録画面 */
+.add{
+  margin-left: 23px;                        /* 文字位置     */
+  letter-spacing: 0.8px;                    /* 文字間隔     */
+  font-family: 'IM Fell DW Pica SC', serif; /* フォント指定 */
+}
+
+/* 登録内容によって表示する文字 */
+#result {
+  margin-left: 19px;                 /* 文字位置     */
+  color: red;                      /* 文字色       */
+  font-weight: bold;                 /* 文字太さ     */
+}
+/*─────────────────────────── 色変えボタン ───────────────────────────*/
+/* 初期画面 */
+.button{
+  position: relative;                   /* 相対位置         */
+  display: inline-block;
+  width: 100px;                         /* 横幅             */
+  margin-left:37px;                     /* 左余白           */
+  padding: 10px　10;                    /* 文字とボタンの幅 */
+  margin-bottom: 15px;
+  border-radius: 20px;                  /* 角丸             */
+  font-size: 15px;                      /* 文字サイズ       */
+  font-weight: 900;                     /* 文字太さ         */
+  text-align: center;                   /* 文字位置         */
+  cursor: pointer;                      /* カーソル変更     */
+  border: 2px solid var(--sub-2-color); /* 枠線             */
+}
+
+/* 登録画面 */
+.buttonAdd{
+  width: 77px;       /* 横幅   */
+  margin-left: 21px; /* 左余白 */
+}
+
+/* LIGHTボタン */
+.light {
+  background: #F5F5F5; /* 背景色 */
+  color: #6D4C41;      /* 文字色 */
+}
+
+/* DARKボタン */
+.dark {
+  background: #37474F; /* 背景色 */
+  color: #F5F5F5;      /* 文字色 */
+}
+
+/*─────────────────────────── 色変数 ───────────────────────────*/
+/* 初期値、LIGHTボタン押下時 */
+:root,:root[theme='LIGHT']{
+  --main-color:#F5F5F5;
+  --sub-color:#FF9800;
+  --sub-2-color:#6D4C41;
+  --font-color:black;
+}
+
+/* DARKボタン押下時 */
+:root[theme='DARK'] {
+  --main-color:#37474F;
+  --sub-color:#0067ff;
+  --sub-2-color:#64B5F6;
+  --font-color:white;
+}
+
+/*─────────────────────────── テキストボックス ───────────────────────────*/
+/* テキストボックスの位置設定 */
+.cp_iptxt {
+  position: relative; /* 相対位置 */
+  width: 200px;       /* 横幅     */
+  margin: 5px 3%;     /* 位置     */
+}
+
+/* 「最大点数」テキストボックスの位置設定 */
+.cp_iptxt_3{
+  margin-top: -37.5px; /* 位置 */
+  margin-left: 280px;  /* 位置 */
+}
+
+/*  テキストボックスの設定 */
+.cp_iptxt input[type='text'] {
+  font: 15px/24px sans-serif; /* 文字サイズ、フォント指定 */
+  box-sizing: border-box;
+  width: 100%;
+  letter-spacing: 1px;        /* 文字感覚       */
+  padding-left: 2em;          /* 文字の開始位置 */
+}
+
+/* 「タイトル」「最小点数」「最大点数」のテキストボックス */
+.cp_iptxt_2 input[type='text'] {
+  padding-left: 5em; /* 文字の開始位置 */
+}
+
+/* テキストボックスフォーカス時 */
+.cp_iptxt input[type='text']:focus {
+  outline: none; /* アウトライン削除 */
+}
+
+/* テキストボックスの設定 */
+.ef {
+  padding: 4px 0;                              /* 文字と線の感覚 */
+  border: 0;                                   /* 枠線なし       */
+  border-bottom: 1px solid var(--sub-2-color); /* 下線部設定     */
+  background-color: transparent;               /* 背景色を透明化 */
+  color: var(--font-color);                    /* 文字色         */
+}
+
+/* テキストボックス下線部アニメーション */
+.ef~.focus_line {
+  position: absolute;                 /* 絶対位置                         */
+  bottom: 0;                          /* アニメーションの位置(上下)       */
+  left: 0;                            /* アニメーションの位置(左)         */
+  width: 0;                           /* アニメーションの位置(終点)       */
+  height: 2px;                        /* 線の太さ                         */
+  transition: 1s;                     /* アニメーションの偏移時間(逸脱時) */
+  background-color: var(--sub-color); /* 線の色                           */
+}
+
+/* テキストボックス下線部アニメーション */
+.ef:focus~.focus_line, .cp_iptxt.ef~.focus_line {
+  width: 100%;    /* アニメーションの位置(終点) を割合で変更 */
+  transition: 1s; /* アニメーションの偏移時間(選択時)        */
+}
+
+/* テキストボックス内の文字設定 */
+.ef~label {
+  position: absolute;    /* 要素の配置方法を指定 */
+  z-index: -1;           /* 重ね掛け位置         */
+  top: 4px;              /* 上からの位置指定     */
+  left: 0;               /* 左からの位置指定     */
+  width: 100%;           /* 文字幅               */
+  transition: 0.7s;      /* 文字の戻る時間       */
+  letter-spacing: 0.5px; /* 文字間隔             */
+  color: #aaaaaa;      /* 動く前の文字色       */
+}
+
+/* 動いた文字の設定 */
+.ef:focus~label, .cp_iptxt.ef~label {
+  font-size: 12px;         /* 文字サイズ */
+  top: -16px;              /* 動く位置   */
+  transition: 0.7s;        /* 時間       */
+  color: var(--sub-color); /* 文字色     */
+}
+
+/*─────────────────────────── プルダウンリスト ───────────────────────────*/
+/* プルダウンリストの設定 */
+.cp_ipselect {
+  overflow: hidden;
+  width: 160px;       /* 横幅           */
+  margin-left: 19px;  /* 位置           */
+  text-align: center; /* 文字を中央揃え */
+}
+
+/* プルダウンリスト内の設定 */
+.cp_ipselect select {
+  width: 100%;             /* 要素全体の位置           */
+  padding-right: 1em;
+  cursor: pointer;         /* カーソルを指さしに変更   */
+  text-indent: 0.01px;     /* インデント指定           */
+  text-overflow: ellipsis; /* あふれた文字を(…)で表記 */
+  border: none;
+  outline: none;
+  background: transparent;
+  background-image: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.cp_ipselect select::-ms-expand {
+  display: none;
+}
+
+/* プルダウンリストの見た目の設定 */
+.cp_ipselect.cp_sl03 {
+  position: relative;                 /* 相対位置     */
+  border-radius: 4px;                 /* 角の丸み     */
+  border: 2px solid var(--sub-color); /* 線の太さと色 */
+  background: #fdfdfd;              /* 背景色       */
+}
+
+/* プルダウンリストの見た目の設定 */
+.cp_ipselect.cp_sl03::before {
+  position: absolute;                  /* 絶対位置       */
+  top: 0.8em;                          /* ▼の位置(上下) */
+  right: 0.8em;                        /* ▼の位置(左右) */
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;     /* ▼の大きさ(左)   */
+  border-right: 6px solid transparent;    /* ▼の大きさ(右)   */
+  border-top: 6px solid var(--sub-color); /* ▼の大きさ(上下) */
+  pointer-events: none;
+}
+
+/* 文字の設定 */
+.cp_ipselect.cp_sl03 select {
+  padding: 8px 38px 8px 8px; /* 文字の位置 */
+  color: #6D4C41;          /* 文字色     */
+  font-weight: bold;         /* 文字太さ   */
+}
+
+/*────────────────────────── ─覧表示・検索ボタン ───────────────────────────*/
+/* ボタン設定 */
+.mainButton{
+  display: inline-block;
+  border-radius: 15px;                /* 角丸         */
+  font-size: 12pt;                    /* 文字サイズ   */
+  text-align: center;                 /* 文字位置     */
+  font-weight: bold;                  /* 文字の太さ   */
+  cursor: pointer;                    /* カーソル     */
+  padding: 8px 12px;                  /* 余白         */
+  margin-left: 19px;                  /* ボタン位置   */
+  background: var(--sub-color);       /* 背景色       */
+  color: #2e2e2e;                   /* 文字色       */
+  line-height: 1em;                   /* 1行の高さ    */
+  transition: .3s;                    /* なめらか変化 */
+  box-shadow: 1px 1px 3px #666666;  /* 影の設定     */
+  border: 2px solid var(--sub-color); /* 枠の指定     */
+}
+
+/*カーソルが重なったときの設定*/
+.mainButton:hover{
+  box-shadow: none;        /* 影消去 */
+  color: var(--sub-color); /* 背景色 */
+  background: #ffffff;   /* 文字色 */
+}
+
+/*─────────────────────────── 表 ───────────────────────────*/
+/* 表の設定 */
+.favoriteTable {
+  margin-top: 12px;          /* ボタンと表の隙間 */
+  margin-left: 19px;         /* ボタン位置       */
+  border-collapse: collapse; /* 境界線の設定     */
+  color: #F5F5F5;          /* 文字色           */
+}
+
+.favoriteTable th, .favoriteTable td {
+  border: 1px solid #000; /* 線の設定 */
+}
+
+/* 表の最初の行の設定 */
+.favoriteTable tr:first-child, .favoriteTable th{
+  background: var(--sub-2-color); /* 背景色 */
+  color:var(--main-color);        /* 文字色 */
+}
+
+/* 表の奇数業設定 */
+.favoriteTable tr:nth-child(2n+1) {
+  background: grey; /* 背景色 */
+}
+
+/* 表の偶数業の設定 */
+.favoriteTable tr:nth-child(even) {
+  background: rgb(165, 165, 165); /* 背景色 */
+}
+
+/*表上にカーソルが重なったときの設定*/
+.favoriteTable tr:hover {
+  background-color: var(--sub-color); /* 背景色 */
+  color: black;                     /* 文字色 */
+}
+
+/* ------ <th>タグの設定 ------ */
+.favoriteTable th.id {
+  width: 1%;
+}
+
+.favoriteTable th.points {
+  width: 2%;
+  white-space: nowrap;
+}
+
+.favoriteTable th.select {
+  width: 4%;
+  white-space: nowrap;
+}
+
+.favoriteTable th.title {
+  width: 10%;
+}
+
+.favoriteTable th.memo {
+  width: 50%;
+}
+
+/* ------ <td>タグの設定 ------ */
+
+td{
+  white-space: nowrap;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+
+<title>My favorite thing management screen</title>
+
+<link href="/css/my_favorite.css" rel="stylesheet"></link>
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script th:src="@{/js/my_favorite.js}" th:inline="javascript"></script>
+<script type="text/javascript">
+		function changeLight() {
+			document.documentElement.setAttribute('theme', 'LIGHT');
+		}
+
+		function changeDark() {
+			document.documentElement.setAttribute('theme', 'DARK');
+		}
+	</script>
+</head>
+
+<body id="body">
+	<p class="first">My favorite thing management screen</p>
+	<h1>好きなもの管理画面</h1>
+
+	<!-- 配色変更ボタン -->
+	<div class="button-container">
+		<div class="button light" onclick="changeLight()">LIGHT</div>
+		<div class="button dark" onclick="changeDark()">DARK</div>
+	</div>
+
+	<!-- ID検索用テキストボックス -->
+	<div class="cp_iptxt">
+		<input type="text" id="id" class="ef" placeholder="" autocomplete="off">
+		<label>ID</label>
+		<span class="focus_line"></span>
+	</div>
+
+	<br>
+
+	<!-- title検索用テキストボックス -->
+	<div class="cp_iptxt cp_iptxt_2">
+		<input type="text" id="title" class="ef" placeholder="" autocomplete="off">
+		<label>タイトル</label>
+		<span class="focus_line"></span>
+	</div>
+
+	<br>
+
+	<!-- 得点(最小)検索用テキストボックス -->
+	<div class="cp_iptxt cp_iptxt_2">
+		<input type="text" id="min" class="ef" placeholder="00" autocomplete="off">
+		<label>最小点数</label>
+		<span class="focus_line"></span>
+	</div>
+
+	<!-- 得点(最大)検索用テキストボックス -->
+	<div class="cp_iptxt cp_iptxt_2 cp_iptxt_3">
+		<input type="text" id="max" class="ef" placeholder="100" autocomplete="off">
+		<label>最大点数</label>
+		<span class="focus_line"></span>
+	</div>
+	
+	<br>
+
+	<!-- select検索用プルダウンリスト -->
+	<div class="cp_ipselect cp_sl03">
+		<select name="select" id="select">
+			<option value="" hidden="">選択して下さい</option>
+			<option value="小説">小説</option>
+			<option value="漫画">漫画</option>
+			<option value="音楽">音楽</option>
+			<option value="アニメ">アニメ</option>
+			<option value="映画">映画</option>
+			<option value="ドラマ">ドラマ</option>
+			<option value="ゲーム">ゲーム</option>
+		</select>
+	</div>
+
+	<br>
+
+	<!-- ボタン各種 -->
+	<input type="button" value="一覧表示" id="buttonA" class="mainButton">
+	<input type="button" value="検索" id="buttonS" class="mainButton">
+	<input type="button" value="クリア" id="buttonC" class="mainButton">
+	<input type="button" value="登録画面" id="buttonR" class="mainButton">
+
+	<br>
+
+	<!-- 結果表 -->
+	<table border="1" id="table" class="favoriteTable">
+		<tr>
+			<th class="id">ID</th>
+			<th class="select">分類</th>
+			<th class="title">タイトル</th>
+			<th class="points">点数</th>
+			<th class="memo">メモ</th>
+		</tr>
+	</table>
+</body>
+
+</html>

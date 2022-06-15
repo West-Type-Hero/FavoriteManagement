@@ -1,0 +1,58 @@
+<p class="add">New registration screen</p>
+<h1>新規登録画面</h1>
+
+<!-- 配色変更ボタン -->
+<div class="button-container">
+	<div class="button buttonAdd light" onclick="changeLight()">LIGHT</div>
+	<div class="button buttonAdd dark" onclick="changeDark()">DARK</div>
+</div>
+
+<!-- 登録内容により表示される文 -->
+<table id="resultTable" border="1" class="favoriteTable"></table>
+<p id="result"></p>
+
+<!-- title入力テキストボックス -->
+<div class="cp_iptxt cp_iptxt_2">
+	<input type="text" id="title" class="ef" placeholder="" autocomplete="off"> <label>タイトル</label>
+	<span class="focus_line"></span>
+</div>
+
+<br>
+
+<!-- 得点入力テキストボックス -->
+<div class="cp_iptxt cp_iptxt_2">
+	<input type="text" id="points" class="ef" placeholder="" autocomplete="off"> <label>得点</label>
+	<span class="focus_line"></span>
+</div>
+
+<br>
+
+<!-- 感想入力テキストボックス -->
+<div class="cp_iptxt cp_iptxt_2">
+	<input type="text" id="memo" class="ef" class="ef" placeholder="" autocomplete="off">
+	<label>感想</label> <span class="focus_line"></span>
+</div>
+
+<br>
+
+<!-- ジャンル指定プルダウンリスト-->
+<div class="cp_ipselect cp_sl03">
+	<select id="select">
+		<option value="" hidden="">選択して下さい</option>
+		<option value="小説">小説</option>
+		<option value="漫画">漫画</option>
+		<option value="音楽">音楽</option>
+		<option value="アニメ">アニメ</option>
+		<option value="映画">映画</option>
+		<option value="ドラマ">ドラマ</option>
+		<option value="ゲーム">ゲーム</option>
+	</select>
+</div>
+
+<br>
+
+<!-- ボタン各種 -->
+<input type="button" value="戻る" id="buttonB" class="mainButton">
+<input type="button" value="登録" id="buttonRr" class="mainButton">
+<input type="button" value="クリア" id="buttonC" class="mainButton">
+
